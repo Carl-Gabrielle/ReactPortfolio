@@ -57,7 +57,7 @@ export default function Navbar() {
                         <span className="text-xs block font-light">Web Developer</span>
                     </div>
                 </Link>
-                <ul className="hidden md:flex items-center gap-8 text-gray-700 text-sm font-semibold">
+                <ul className="hidden md:flex items-center gap-8 text-gray-700 text-sm font-medium">
                     {navItems.map((item) => {
                         const isActive = location.pathname === item.to;
                         return (

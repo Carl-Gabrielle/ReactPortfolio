@@ -1,5 +1,4 @@
 import React from 'react';
-
 import aboutImage from '../assets/images/aboutImg.jpg';
 import { FiMonitor } from 'react-icons/fi';
 import { BiServer } from 'react-icons/bi';
@@ -7,6 +6,7 @@ import { RiStackLine } from 'react-icons/ri';
 import { MdDevices } from 'react-icons/md';
 import { FiPenTool } from 'react-icons/fi';
 import { BsArrowReturnRight } from 'react-icons/bs';
+import { SectionHeader, SectionSubHeader } from './ui/SectionHeader';
 
 const CardStyle = ({ children, className = '' }) => (
     <div className={`group p-6 rounded-xl border border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md ${className}`}>
@@ -14,29 +14,17 @@ const CardStyle = ({ children, className = '' }) => (
     </div>
 );
 
-const SectionHeader = ({ text }) => (
-    <h2 className="text-center mt-5 hover:-translate-y-1 hover:scale-100 transition duration-300 ease-in-out text-gray-800 font-extrabold text-4xl sm:text-5xl tracking-wide hover:underline">
-        {text}
-    </h2>
-);
-
-const SectionSubHeader = ({ text }) => (
-    <h3 className="text-md font-semibold uppercase tracking-wide sm:text-left text-center bg-primary text-secondary px-4 py-1 rounded-full">
-        {text}:
-    </h3>
-);
-
 const ServiceCard = ({ icon, title }) => (
     <div className="service-card px-3 py-2 rounded-lg border-2 border-gray-400 border-dashed shadow-sm hover:shadow-md transition-shadow">
         <div className="flex items-center space-x-3">
             <div className="rounded-full bg-primary-100 text-primary-600">{icon}</div>
-            <h4 className="font-medium text-gray-800 text-sm text-nowrap">{title}</h4>
+            <h4 className="font-medium text-gray-800 text-xs sm:text[2em] text-nowrap">{title}</h4>
         </div>
     </div>
 );
 
 const ParagraphBlock = ({ textParts = [] }) => (
-    <p className="text-gray-700 mt-4 leading-8 text-justify">
+    <p className="text-gray-700 text-sm mt-4 leading-8 text-justify">
         {textParts.map((part, index) =>
             part.bold ? (
                 <strong key={index} className="font-semibold text-gray-700">
@@ -51,10 +39,9 @@ const ParagraphBlock = ({ textParts = [] }) => (
 
 export default function About() {
     return (
-        <section className="w-7xl mx-auto px-4 lg:px-10 py-10 md:py-11">
+        <section className="w-full h-full   py-10 md:py-11 px-6  max-w-full  mx-auto">
             <SectionHeader text="About Me" />
             <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-6 px-4 mt-8">
-                {/* Image + caption */}
                 <div className="flex flex-col items-center  md:items-center lg:items-start space-y-4 sm:space-y-0 sm:w-full w-auto">
                     <img
                         id="aboutImage"
@@ -72,7 +59,6 @@ export default function About() {
                     </div>
                 </div>
 
-                {/* Text Content */}
                 <div className="flex flex-col justify-center items-start space-y-4 sm:border-l-2 border-dashed md:border-0 lg:border-l-2 border-gray-400 sm:pl-6">
                     <SectionSubHeader text="Get to know me" />
                     <ParagraphBlock
@@ -86,7 +72,7 @@ export default function About() {
                     />
                     <ParagraphBlock
                         textParts={[
-                            { content: 'I specialize in front-end development with expertise in modern technologies including ', bold: false },
+                            { content: 'I specialize in  web development with expertise in modern technologies including ', bold: false },
                             { content: 'React', bold: true },
                             { content: ', ', bold: false },
                             { content: 'TypeScript', bold: true },
@@ -98,7 +84,7 @@ export default function About() {
                             { content: 'Shadcn UI', bold: true },
                             { content: ' for efficient styling and ', bold: false },
                             { content: 'GSAP', bold: true },
-                            { content: ' for engaging animations. I\'m committed to writing clean, maintainable code following best practices.', bold: false },
+                            { content: ' for engaging animations. ', bold: false },
                         ]}
                     />
                     <ParagraphBlock
@@ -116,8 +102,6 @@ export default function About() {
                             { content: ' to ensure smooth teamwork. I stay current with modern tech stacks through continuous learning, experimenting with new tools in personal repositories and sharing knowledge through code reviews and documentation.', bold: false },
                         ]}
                     />
-
-                    {/* Services */}
                     <div className="services-section space-y-6 w-full">
                         <div className="mb-4">
                             <h3 className="text-lg font-semibold uppercase tracking-wider text-primary-600">
@@ -130,7 +114,7 @@ export default function About() {
                                 </span>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <div className="grid grid-cols-1   sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4  gap-4">
                             <ServiceCard icon={<FiMonitor size={18} />} title="Frontend Development" />
                             <ServiceCard icon={<BiServer size={18} />} title="Backend Development" />
                             <ServiceCard icon={<RiStackLine size={18} />} title="Full-Stack Development" />
