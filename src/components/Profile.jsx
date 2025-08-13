@@ -11,13 +11,13 @@ import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const EducationCard = ({ logo, title, date, school, program, isLast }) => (
     <div className="relative group pl-8">
-        <div className="animate-pulse absolute left-0 top-5 h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 border-2  border-white shadow-md transform -translate-x-1/2 z-10 transition-all duration-300 group-hover:scale-125"></div>
+        <div className="animate-pulse absolute left-0 top-5 h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 border-2 border-white shadow-md transform -translate-x-1/2 z-10 transition-all duration-300 group-hover:scale-125"></div>
 
         {!isLast && (
-            <div className="absolute left-0 top-8 h-full w-0.5 bg-gray-200  transform -translate-x-1/2"></div>
+            <div className="absolute left-0 top-8 h-full w-0.5 bg-gray-200 transform -translate-x-1/2"></div>
         )}
 
-        <div className=" rounded-xl shadow-sm p-4 flex items-start gap-4 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
+        <div className="rounded-xl shadow-sm p-4 flex items-start gap-4 transition-all duration-300 hover:shadow-md hover:-translate-y-0.5">
             <div className="p-1.5 bg-white rounded-lg border border-gray-100 shadow-xs flex-shrink-0 mt-0.5">
                 <img
                     src={logo}
@@ -26,10 +26,10 @@ const EducationCard = ({ logo, title, date, school, program, isLast }) => (
                 />
             </div>
             <div className="flex-1">
-                <h3 className="font-semibold text-gray-800 text-sm text-nowrap">{title}</h3>
-                <p className="text-gray-600 text-[0.70rem] font-medium mt-1 italic">{program}</p>
+                <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
                 <p className="text-gray-600 text-xs font-medium mt-1">{date}</p>
-                <p className="text-gray-600 text-xs mt-1.5 text-nowrap">{school}</p>
+                <p className="text-gray-500 text-xs mt-0.5">{program}</p>
+                <p className="text-gray-700 text-xs mt-1.5">{school}</p>
             </div>
         </div>
     </div>
@@ -84,8 +84,9 @@ export default function Profile() {
                         <EducationCard
                             logo={PsuLogo}
                             title="Tertiary Education"
+                            program="Bachelor of Science in Information Technology"
+                            school="Pangasinan State University"
                             date="August 2021 - 2025"
-                            school="Pangasinan State University "
                             isFirst={true}
                             isLast={false}
                         />
@@ -93,7 +94,7 @@ export default function Profile() {
                         <EducationCard
                             logo={AcnhsLogo}
                             title="Upper Secondary Education"
-                            // program="STEM"
+                            program="Science, Technology, Engineering, and Mathematics (STEM)"
                             date="June 2019 - 2021"
                             school="Alaminos City National High School "
                             isFirst={false}
@@ -103,6 +104,7 @@ export default function Profile() {
                         <EducationCard
                             logo={AcnhsLogo}
                             title="Lower Secondary Education"
+                            program="Special Program in the Arts (SPA)"
                             date="June 2016 - 2019"
                             school="Alaminos City National High School"
                             isFirst={false}
@@ -112,6 +114,7 @@ export default function Profile() {
                         <EducationCard
                             logo={AccsLogo}
                             title="Primary Education"
+                            program="Elementary Education"
                             date="June 2010 - 2016"
                             school="Alaminos City Central School"
                             isFirst={false}
@@ -120,7 +123,7 @@ export default function Profile() {
                     </div>
                 </div>
 
-                <div className="border border-gray-100 bg-white rounded-3xl p-6 shadow-sm md:col-span-1 lg:col-span-2">
+                <div className="border border-gray-100 bg-white rounded-3xl p-6 shadow-sm md:col-span-1 lg:col-span-2 ">
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <div>
                             <SectionTitle icon={<IoBriefcaseOutline size={20} />} text="Professional Experience" />

@@ -59,16 +59,21 @@ export default function Hero() {
                             I'm Carl
                         </span>
                     </h1>
-
                     <p className="text-base text-justify text-gray-700 leading-8">
-                        As a recent graduate with a Bachelor of Science in Information Technology, I am a passionate and driven
-                        <BlurText
-                            text="aspiring web developer"
+                        Recent  <BlurText
+                            text="BS in Information Technology  "
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="font-bold text-nowrap shadow-md  bg-primary text-gray-100 px-3 rounded-lg "
-                        />  dedicated to Sharpening my skills in evolving development frameworks. I actively stay updated with industry trends and emerging innovations to deliver dynamic, user-centric web solutions.Eager to apply my technical skills to impactful tech projects🚀
+                            className="font-semibold text-nowrap text-primary "
+                        />  graduate, passionate and driven
+                        <BlurText
+                            text="web developer, "
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                            className="font-semibold text-nowrap text-primary "
+                        />  dedicated to sharpening skills in evolving frameworks. Continuously updated on industry trends and innovations to deliver dynamic, user-centric solutions. Eager to apply my technical expertise to impactful projects.🚀
                     </p>
                     <hr className="mt-4 w-full border-gray-300" />
                     <div className="w-full flex items-center justify-between gap-4">

@@ -80,7 +80,9 @@ export default function Navbar() {
                         );
                     })}
                 </ul>
-                <span className="text-gray-500 text-md hidden sm:inline-block">@carlgabrielle</span>
+                <a href="https://www.linkedin.com/in/carl-gabrielle/" target="_blank" rel="noopener noreferrer" className="hidden md:flex items-center gap-2 ">
+                    <span className="text-gray-500 text-md hidden sm:inline-block">@carlgabrielle</span>
+                </a>
                 <button
                     onClick={toggleMenu}
                     className="md:hidden text-gray-700 focus:outline-none  p-2 rounded-full hover:bg-gray-200 transition-colors duration-200"
@@ -112,11 +114,17 @@ export default function Navbar() {
                                     </Link>
                                 </li>
                             ))}
-                            <li>
-                                <Link className="flex items-center gap-2 hover:text-black transition font-light">
+                            <li >
+                                <a
+                                    href="https://www.linkedin.com/in/carl-gabrielle/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-center gap-2 text-gray-500"
+                                >
                                     <IoIosLink size={20} aria-hidden="true" />
                                     <span>@carlgabrielle</span>
-                                </Link>
+                                </a>
+
                             </li>
                             <hr className="w-full " />
                             <div className="text-black text-xs flex items-center justify-between gap-2 w-full">
