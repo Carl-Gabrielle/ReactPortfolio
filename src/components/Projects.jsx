@@ -25,7 +25,7 @@ export default function Projects() {
     };
 
     return (
-        <section className=" mx-auto px-4 lg:px-10 py-10 md:py-11">
+        <section id="projects" className=" mx-auto px-4 dark:bg-dark lg:px-10 py-10 md:py-11 scroll-mt-20 transition-all duration-300 ease-in-out">
             <div className="mb-12">
                 <SectionHeader text="Recent Projects" />
             </div>

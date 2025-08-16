@@ -26,10 +26,10 @@ const EducationCard = ({ logo, title, date, school, program, isLast }) => (
                 />
             </div>
             <div className="flex-1">
-                <h3 className="font-semibold text-gray-800 text-sm">{title}</h3>
-                <p className="text-gray-600 text-xs font-medium mt-1">{date}</p>
-                <p className="text-gray-500 text-xs mt-0.5">{program}</p>
-                <p className="text-gray-700 text-xs mt-1.5">{school}</p>
+                <h3 className="font-semibold text-gray-800 text-sm dark:text-slate-100 transition-all duration-300 ease-in-out">{title}</h3>
+                <p className="text-gray-600 text-xs font-medium mt-1 dark:text-slate-200 transition-all duration-300 ease-in-out">{date}</p>
+                <p className="text-gray-500 text-xs mt-0.5 dark:text-slate-200 transition-all duration-300 ease-in-out">{program}</p>
+                <p className="text-gray-700 text-xs mt-1.5 dark:text-slate-200 transition-all duration-300 ease-in-out">{school}</p>
             </div>
         </div>
     </div>
@@ -39,15 +39,14 @@ const CertificationCard = ({ title, date, organization }) => (
     <div className="group mt-4">
         <div className="rounded-xl shadow-sm p-3 border border-gray-200 transition-all duration-300 hover:shadow-md  hover:-translate-y-0.5">
             <div className="flex justify-between items-start">
-                <span className="text-gray-800 font-semibold text-sm">
+                <span className="text-gray-800 font-semibold text-sm dark:text-slate-100 transition-all duration-300 ease-in-out">
                     {organization}
                 </span>
-
-                <span className="text-gray-600 text-xs bg-gray-50  rounded italic px-0.5">
+                <span className="text-gray-600 text-xs bg-gray-50  rounded italic px-0.5 dark:text-primary  dark:bg-white/90   transition-all duration-300 ease-in-out  ">
                     {date}
                 </span>
             </div>
-            <p className="text-gray-600 text-xs mt-1">{title}</p>
+            <p className="text-gray-600 text-xs mt-1 dark:text-slate-200 transition-all duration-200 ease-in-out">{title}</p>
         </div>
     </div>
 );
@@ -56,12 +55,12 @@ const ExperienceCard = ({ role, company, date, description }) => (
     <div className="relative pl-6 border-l border-gray-200">
         <div className="mb-8 ml-4">
             <div className="animate-pulse absolute left-0 top-0 h-3 w-3 rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 border-2  border-white shadow-md transform -translate-x-1/2 z-10 transition-all duration-300 group-hover:scale-125"></div>
-            <h3 className="text-md font-semibold text-gray-800">{role}</h3>
+            <h3 className="text-md font-semibold text-gray-800 dark:text-slate-100 transition-all duration-300 ease-in-out">{role}</h3>
             <div className="text-muted text-xs text-gray-500 flex justify-between items-center flex-wrap">
-                <span className="text-sm font-medium text-indigo-600">{company}</span>
-                <span className="text-xs text-gray-400">{date}</span>
+                <span className="text-sm font-medium text-indigo-600 ">{company}</span>
+                <span className="text-xs text-gray-400 dark:text-slate-200 transition-all duration-300 ease-in-out">{date}</span>
             </div>
-            <p className="mt-2 text-gray-600 text-xs leading-relaxed">
+            <p className="mt-2 text-gray-600 text-xs leading-relaxed dark:text-slate-200 transition-all duration-300 ease-in-out">
                 {description}
             </p>
         </div>
@@ -70,10 +69,10 @@ const ExperienceCard = ({ role, company, date, description }) => (
 
 export default function Profile() {
     return (
-        <section className="w-full h-full   py-10 md:py-11 px-6  max-w-full  mx-auto">
+        <section className="w-full h-full dark:bg-dark  py-10 md:py-11 px-6  max-w-full  mx-auto transition-all duration-300 ease-in-out">
             <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6">
 
-                <div className="border border-gray-100 bg-white rounded-3xl p-6 shadow-sm">
+                <div className="border border-gray-100 bg-white rounded-3xl p-6 shadow-sm dark:bg-containerDark dark:border-0">
                     <SectionTitle
                         icon={<PiGraduationCap size={20} />}
                         text="Education"
@@ -123,7 +122,7 @@ export default function Profile() {
                     </div>
                 </div>
 
-                <div className="border border-gray-100 bg-white rounded-3xl p-6 shadow-sm md:col-span-1 lg:col-span-2 ">
+                <div className="border border-gray-100 bg-white rounded-3xl p-6 shadow-sm md:col-span-1 lg:col-span-2 dark:bg-containerDark dark:border-0 ">
                     <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
                         <div>
                             <SectionTitle icon={<IoBriefcaseOutline size={20} />} text="Professional Experience" />

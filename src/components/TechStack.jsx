@@ -1,6 +1,6 @@
 import { SectionHeader } from './ui/SectionHeader';
 import { FaReact, FaNodeJs, FaLaravel, FaPhp, FaHtml5, FaCss3Alt, FaJsSquare, FaDatabase, FaGitAlt, FaGithub } from 'react-icons/fa';
-import { SiBootstrap, SiTailwindcss, SiInertia, SiGreensock, SiMysql, SiJira, SiVercel, SiShadcnui } from 'react-icons/si';
+import { SiBootstrap, SiTailwindcss, SiInertia, SiGreensock, SiMysql, SiJira, SiVercel, SiShadcnui, SiTypescript } from 'react-icons/si';
 import { VscVscode } from "react-icons/vsc";
 
 
@@ -9,6 +9,7 @@ const frontStack = [
     { name: 'CSS3', icon: <FaCss3Alt className="text-[#264DE4]" /> },
     { name: 'JavaScript', icon: <FaJsSquare className="text-[#F7DF1E]" /> },
     { name: 'React.js', icon: <FaReact className="text-[#61DAFB]" /> },
+    { name: 'TypeScript', icon: <SiTypescript className="text-[#3178C6]" /> },
     { name: 'Bootstrap', icon: <SiBootstrap className="text-[#7952B3]" /> },
     { name: 'Tailwind CSS', icon: <SiTailwindcss className="text-[#38BDF8]" /> },
     { name: 'Inertia.js', icon: <SiInertia className="text-[#9553E9]" /> },
@@ -32,15 +33,15 @@ const toolStack = [
 
 export default function TechStack() {
     return (
-        <section className="mx-auto px-4 lg:px-10 py-10 md:py-11">
+        <section className="mx-auto px-4 lg:px-10 py-10 md:py-11 dark:bg-dark transition-all duration-300 ease-in-out">
             <div className="mb-16 text-center">
                 <SectionHeader text="Tech Stack" />
-                <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-lg">
+                <p className="text-gray-500 mt-3 max-w-2xl mx-auto text-lg dark:text-slate-200 transition-all duration-300 ease-in-out">
                     An overview of the tech stack I use to create web applications
                 </p>
             </div>
             <div className="flex flex-col items-center sm:items-start mb-6 sm:justify-start justify-center">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8">
+                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8  dark:bg-black transition-all duration-300 ease-in-out">
                     Frontend Development
                 </div>
                 <div className="flex w-full justify-center sm:justify-start px-3 sm:px-0">
@@ -48,12 +49,12 @@ export default function TechStack() {
                         {frontStack.map((tech, index) => (
                             <div
                                 key={index}
-                                className="flex items-center gap-2 sm:gap-3 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200"
+                                className="flex items-center gap-2 sm:gap-3 p-3 rounded-xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200"
                             >
                                 <div className="text-[22px] sm:text-[24px] text-gray-700/90">
                                     {tech.icon}
                                 </div>
-                                <span className="text-gray-800 font-medium text-sm sm:text-[13px] tracking-tight">
+                                <span className="text-gray-800 font-medium text-sm sm:text-[13px] tracking-tight dark:text-slate-200 transition-all duration-300 ease-in-out">
                                     {tech.name}
                                 </span>
                             </div>
@@ -65,7 +66,7 @@ export default function TechStack() {
             </div>
 
             <div className="flex flex-col items-center sm:items-end mb-6 sm:justify-end justify-center">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8">
+                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8  dark:bg-black ">
                     Backend Development
                 </div>
 
@@ -74,23 +75,22 @@ export default function TechStack() {
                         {backStack.map((tech, index) => (
                             <div
                                 key={index}
-                                className="flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200 w-full"
+                                className="flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-xl dark:bg-containerDark dark:border-0 bg-white/80 backdrop-blur-sm border  border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200 w-full"
                             >
                                 <div className="text-[22px] sm:text-[24px] text-gray-700/90">
                                     {tech.icon}
                                 </div>
-                                <span className="text-gray-800 font-medium text-sm sm:text-[13px] tracking-tight">
+                                <span className="text-gray-800 font-medium text-sm sm:text-[13px] tracking-tight dark:text-slate-200 transition-all duration-300 ease-in-out">
                                     {tech.name}
                                 </span>
                             </div>
                         ))}
                     </div>
                 </div>
-
             </div>
 
             <div className="flex flex-col items-center sm:items-start mb-6 sm:justify-start justify-center">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8">
+                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8  dark:bg-black ">
                     Tools & Platforms
                 </div>
                 <div className="flex w-full justify-center sm:justify-start px-3 sm:px-0">
@@ -98,12 +98,12 @@ export default function TechStack() {
                         {toolStack.map((tech, index) => (
                             <div
                                 key={index}
-                                className="flex items-center gap-4 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border border-gray-100 shadow-md hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-250 ease-out hover:border-gray-200"
+                                className="flex items-center gap-4 p-3 rounded-xl bg-white/80 dark:bg-containerDark dark:border-0 backdrop-blur-sm border border-gray-100 shadow-md hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-250 ease-out hover:border-gray-200"
                             >
                                 <div className="text-[22px] text-gray-700/90">
                                     {tech.icon}
                                 </div>
-                                <span className="text-gray-800 font-medium text-[13px] tracking-tight">
+                                <span className="text-gray-800 font-medium text-[13px] tracking-tight dark:text-slate-200 transition-all duration-300 ease-in-out">
                                     {tech.name}
                                 </span>
                             </div>

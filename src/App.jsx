@@ -8,6 +8,7 @@ import TechStack from "./components/TechStack";
 import Contacts from "./components/Contacts";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
         <Projects />
         <TechStack />
         <Contacts />
+        <Footer />
       </div >
     </>
   );

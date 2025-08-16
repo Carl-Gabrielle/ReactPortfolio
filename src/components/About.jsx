@@ -15,19 +15,19 @@ const CardStyle = ({ children, className = '' }) => (
 );
 
 const ServiceCard = ({ icon, title }) => (
-    <div className="service-card px-3 py-2 rounded-lg border-2 border-gray-400 border-dashed shadow-sm hover:shadow-md transition-shadow">
+    <div className="service-card px-3 py-2 rounded-lg border border-gray-400 border-dashed dark:border-slate-200    shadow-sm hover:shadow-md transition-shadow dark:text-slate-200 dark:transition-all duration-300 ease-in-out">
         <div className="flex items-center space-x-3">
             <div className="rounded-full bg-primary-100 text-primary-600">{icon}</div>
-            <h4 className="font-medium text-gray-800 text-xs sm:text[2em] text-nowrap">{title}</h4>
+            <h4 className="font-medium text-gray-800 text-xs sm:text[2em] text-nowrap dark:text-slate-200 transition-all duration-300 ease-in-out">{title}</h4>
         </div>
     </div>
 );
 
 const ParagraphBlock = ({ textParts = [] }) => (
-    <p className="text-gray-700 text-sm mt-4 leading-8 text-justify">
+    <p className="text-gray-700 text-sm mt-4 leading-8 text-justify dark:text-slate-200 transition-all duration-300 ease-in-out">
         {textParts.map((part, index) =>
             part.bold ? (
-                <strong key={index} className="font-semibold text-gray-700">
+                <strong key={index} className="font-semibold text-gray-700 dark:text-slate-200 transition-all duration-300 ease-in-out">
                     {part.content}
                 </strong>
             ) : (
@@ -39,7 +39,7 @@ const ParagraphBlock = ({ textParts = [] }) => (
 
 export default function About() {
     return (
-        <section className="w-full h-full   py-10 md:py-11 px-6  max-w-full  mx-auto">
+        <section id="about" className="w-full h-full dark:bg-dark   py-10 md:py-11 px-6  max-w-full  mx-auto scroll-mt-20 transition-all duration-300 ease-in-out ">
             <SectionHeader text="About Me" />
             <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-6 px-4 mt-8">
                 <div className="flex flex-col items-center  md:items-center lg:items-start space-y-4 sm:space-y-0 sm:w-full w-auto">
@@ -49,17 +49,17 @@ export default function About() {
                         alt="Portrait of the developer"
                         className="w-full max-w-xs aspect-[2/3] object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out shadow-lg mb-2"
                     />
-                    <div className="mt-4 text-sm text-gray-600 font-medium tracking-wide text-center sm:text-left md:text-center lg:text-start">
+                    <div className="mt-4 text-sm text-gray-600 font-medium tracking-wide text-center sm:text-left md:text-center lg:text-start dark:text-slate-200 transition-all duration-300 ease-in-out">
                         <h1>
                             A quiet moment, a cold brew, and big ideas brewing.
                         </h1>
-                        <p className="mt-1 text-xs text-gray-500 italic font-light tracking-normal">
+                        <p className="mt-1 text-xs text-gray-500 italic font-light tracking-normal dark:text-slate-200 transition-all duration-300 ease-in-out">
                             June 13, 2024 · Tondaligan Beach
                         </p>
                     </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start space-y-4 sm:border-l-2 border-dashed md:border-0 lg:border-l-2 border-gray-400 sm:pl-6">
+                <div className="flex flex-col justify-center items-start space-y-4 sm:border-l-2 border-dashed dark:border-slate-200  transition-all duration-300 ease-in-out  md:border-0 lg:border-l-2 border-gray-400 sm:pl-6">
                     <SectionSubHeader text="Get to know me" />
                     <ParagraphBlock
                         textParts={[
@@ -104,12 +104,12 @@ export default function About() {
                     />
                     <div className="services-section space-y-6 w-full">
                         <div className="mb-4">
-                            <h3 className="text-lg font-semibold uppercase tracking-wider text-primary-600">
+                            <h3 className="text-lg font-semibold uppercase tracking-wider text-primary-600 dark:text-slate-200 transition-all duration-300 ease-in-out">
                                 Services I Provide
                             </h3>
                             <div className="flex items-center space-x-2 text-gray-500">
-                                <BsArrowReturnRight />
-                                <span className="text-sm font-medium">
+                                <BsArrowReturnRight className='dark:text-slate-200 transition-all duration-300 ease-in-out' />
+                                <span className="text-sm font-medium dark:text-slate-200 transition-all duration-300 ease-in-out">
                                     I build user-friendly websites with a focus on design, performance, and functionality
                                 </span>
                             </div>

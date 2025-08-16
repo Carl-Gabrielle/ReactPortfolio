@@ -7,7 +7,7 @@ import { HiLocationMarker } from 'react-icons/hi';
 
 export default function Hero() {
     const StatisticCard = ({ number, description, isLast }) => (
-        <div className={`px-8 sm:px-12 lg:px-16 flex flex-col items-center border-gray-400 ${!isLast ? 'sm:border-r-2 border-dashed' : ''}`}>
+        <div className={`px-8 sm:px-12 lg:px-16 flex flex-col items-center border-gray-400 dark:border-slate-200  transition-all duration-300 ease-in-out  ${!isLast ? 'sm:border-r-2 border-dashed' : ''}`}>
             <div className='flex space-x-4 items-center justify-center flex-col'>
                 <BlurText
                     text={number}
@@ -15,7 +15,7 @@ export default function Hero() {
                     animateBy="chars"
                     direction="top"
                     onAnimationComplete={() => console.log('Number animation completed')}
-                    className="text-1xl sm:text-2xl font-bold text-gray-600 bg-white bg-opacity-60 backdrop-blur-md shadow-md border  border-zinc-300 px-6 rounded-2xl"
+                    className="text-1xl sm:text-2xl font-bold text-gray-600 bg-white bg-opacity-60 backdrop-blur-md shadow-md border  transition-all duration-300 ease-in-out dark:bg-containerDark dark:border-containerDark dark:text-slate-200 border-zinc-300 px-6 rounded-2xl"
                 />
                 <BlurText
                     text={description}
@@ -23,13 +23,13 @@ export default function Hero() {
                     animateBy="words"
                     direction="top"
                     onAnimationComplete={() => console.log('Description animation completed')}
-                    className="text-gray-500 text-center text-md"
+                    className="text-gray-500 text-center text-md dark:text-slate-200"
                 />
             </div>
         </div >
     );
     return (
-        <section className="w-full h-full   py-10 md:py-9 px-6  max-w-full  mx-auto relative">
+        <section id="hero" className="w-full h-full   dark:bg-dark  py-10 md:py-9 px-6  max-w-full  mx-auto relative scroll-mt-20 transition-all duration-300 ease-in-out">
             <div className="grid grid-cols md:grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full py-12 ">
                 <div className="flex justify-center   lg:order-2 w-full relative">
                     <div
@@ -43,46 +43,46 @@ export default function Hero() {
                             className="w-full h-full object-cover  transition duration-500 ease-in-out transform hover:scale-105"
                         />
                     </div>
-                    <div className="hidden md:flex absolute -bottom-3 left-3 items-center gap-2 px-3 py-2 bg-white/60 backdrop-blur-sm rounded-full border border-gray-200/80 shadow-sm hover:shadow transition-all duration-300 group max-w-fit">
+                    <div className="hidden md:flex absolute -bottom-3 left-3 items-center gap-2 px-3 py-2 dark:border-containerDark  dark:bg-containerDark  bg-white/60 backdrop-blur-sm rounded-full border border-gray-200/80 shadow-sm hover:shadow transition-all duration-300 group max-w-fit">
                         <HiLocationMarker className="text-indigo-600 group-hover:text-indigo-700 transition-colors" size={18} />
-                        <div className="flex flex-col leading-tight">
-                            <span className="text-sm font-medium text-gray-900">Alaminos City, Pangasinan</span>
-                            <span className="text-xs text-gray-500">Philippines • 1 Year of  Experience</span>
+                        <div className="flex flex-col leading-tight ">
+                            <span className="text-sm font-medium text-gray-900 dark:text-slate-200 transition-all duration-300 ease-in-out">Alaminos City, Pangasinan</span>
+                            <span className="text-xs text-gray-500 dark:text-slate-200 transition-all duration-300 ease-in-out">Philippines • 1 Year of  Experience</span>
                         </div>
                     </div>
 
                 </div>
                 <div className="space-y-6 order-2 md:order-1 text-center md:text-left w-full ">
-                    <h1 className="text-7xl  text- tracking-wide font-extrabold mb-2">
+                    <h1 className="text-7xl  text- tracking-wide font-extrabold mb-2 dark:text-slate-200 transition-all duration-300 ease-in-out">
                         Hello,{" "}
-                        <span className="px-6 transition duration-300 ease-in-out hover:text-white hover:bg-primary rounded-lg py-2 inline-flex items-center">
+                        <span className="px-6 transition duration-300 ease-in-out hover:text-white hover:bg-primary dark:hover:bg-slate-200  dark:hover:text-primary  rounded-lg py-2 inline-flex items-center">
                             I'm Carl
                         </span>
                     </h1>
-                    <p className="text-base text-justify text-gray-700 leading-8">
+                    <p className="text-base text-justify text-gray-700 leading-8 dark:text-slate-200 transition-all duration-300 ease-in-out">
                         Recent  <BlurText
                             text="BS in Information Technology  "
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="font-semibold text-nowrap text-primary "
+                            className="font-semibold text-nowrap text-primary  dark:text-slate-200   transition-all duration-300 ease-in-out"
                         />  graduate, passionate and driven
                         <BlurText
                             text="web developer, "
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="font-semibold text-nowrap text-primary "
+                            className="font-semibold text-nowrap text-primary  dark:text-slate-200 transition-all duration-300 ease-in-out"
                         />  dedicated to sharpening skills in evolving frameworks. Continuously updated on industry trends and innovations to deliver dynamic, user-centric solutions. Eager to apply my technical expertise to impactful projects.🚀
                     </p>
                     <hr className="mt-4 w-full border-gray-300" />
                     <div className="w-full flex items-center justify-between gap-4">
                         <a href="">
-                            <span className="px-8 py-2.5 shadow-xl bg-primary rounded-full  text-secondary font-semibold flex items-center justify-center">
+                            <span className="px-8 py-2.5 shadow-xl bg-primary rounded-full  text-secondary font-semibold flex items-center justify-center  dark:bg-slate-200 dark:text-primary transition-all duration-300 ease-in-out">
                                 <FaDownload className="mr-2" /> Download CV
                             </span>
                         </a>
-                        <ul className="flex items-center gap-4 text-gray-700">
+                        <ul className="flex items-center gap-4 text-gray-700 dark:text-slate-200 transition-all duration-300 ease-in-out">
                             <li>
                                 <a href="https://www.instagram.com/carlgabrielle/" target="_blank" rel="noopener noreferrer">
                                     <FaInstagram size={26} />
