@@ -1,11 +1,17 @@
 import { Link } from 'react-router-dom';
 import { FaDownload, FaGithub } from "react-icons/fa6";
-import { FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaInstagram, FaLinkedinIn, FaFacebook } from "react-icons/fa";
 import ProfileImage from '../assets/images/profile.jpeg';
 import BlurText from "./BlurText";
 import { HiLocationMarker } from 'react-icons/hi';
+import { useEffect } from "react";
+import { Animations } from "../animations/gsap";
 
 export default function Hero() {
+
+    useEffect(() => {
+        Animations();
+    }, []);
     const StatisticCard = ({ number, description, isLast }) => (
         <div className={`px-8 sm:px-12 lg:px-16 flex flex-col items-center border-gray-400 dark:border-slate-200  transition-all duration-300 ease-in-out  ${!isLast ? 'sm:border-r-2 border-dashed' : ''}`}>
             <div className='flex space-x-4 items-center justify-center flex-col'>
@@ -43,49 +49,58 @@ export default function Hero() {
                             className="w-full h-full object-cover  transition duration-500 ease-in-out transform hover:scale-105"
                         />
                     </div>
-                    <div className="hidden md:flex absolute -bottom-3 left-3 items-center gap-2 px-3 py-2 dark:border-containerDark  dark:bg-containerDark  bg-white/60 backdrop-blur-sm rounded-full border border-gray-200/80 shadow-sm hover:shadow transition-all duration-300 group max-w-fit">
+                    <div id='address' className="hidden md:flex absolute -bottom-3 left-3 items-center gap-2 px-3 py-2 dark:border-containerDark  dark:bg-containerDark  bg-white/60 backdrop-blur-sm rounded-full border border-gray-200/80 shadow-sm hover:shadow dark:transition-all dark:duration-300 group max-w-fit">
                         <HiLocationMarker className="text-indigo-600 group-hover:text-indigo-700 transition-colors" size={18} />
                         <div className="flex flex-col leading-tight ">
-                            <span className="text-sm font-medium text-gray-900 dark:text-slate-200 transition-all duration-300 ease-in-out">Alaminos City, Pangasinan</span>
-                            <span className="text-xs text-gray-500 dark:text-slate-200 transition-all duration-300 ease-in-out">Philippines • 1 Year of  Experience</span>
+                            <span className="text-sm font-medium text-gray-900 dark:text-slate-200  dark:transition-all dark:duration-300 dark:ease-in-out">Alaminos City, Pangasinan</span>
+                            <span className="text-xs text-gray-500 dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out">Philippines • 1 Year of  Experience</span>
                         </div>
                     </div>
 
                 </div>
                 <div className="space-y-6 order-2 md:order-1 text-center md:text-left w-full ">
-                    <h1 className="text-7xl  text- tracking-wide font-extrabold mb-2 dark:text-slate-200 transition-all duration-300 ease-in-out">
+                    <h1 id='hero-text' style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }} className="  text-7xl  text- tracking-wide font-extrabold mb-2 dark:text-slate-200 transition-all duration-300 ease-in-out">
                         Hello,{" "}
-                        <span className="px-6 transition duration-300 ease-in-out hover:text-white hover:bg-primary dark:hover:bg-slate-200  dark:hover:text-primary  rounded-lg py-2 inline-flex items-center">
+                        <span className=" px-6 transition duration-300 ease-in-out hover:text-white hover:bg-primary dark:hover:bg-slate-200  dark:hover:text-primary  rounded-lg py-2 inline-flex items-center">
                             I'm Carl
                         </span>
                     </h1>
-                    <p className="text-base text-justify text-gray-700 leading-8 dark:text-slate-200 transition-all duration-300 ease-in-out">
-                        Recent  <BlurText
-                            text="BS in Information Technology  "
-                            delay={150}
-                            animateBy="words"
-                            direction="top"
-                            className="font-semibold text-nowrap text-primary  dark:text-slate-200   transition-all duration-300 ease-in-out"
-                        />  graduate, passionate and driven
+                    <p
+                        id="description"
+                        className="text-base text-justify text-gray-700 leading-8 dark:text-slate-200"
+                    >
+                        Recent{" "}
                         <BlurText
-                            text="web developer, "
+                            text="BS in Information Technology"
                             delay={150}
                             animateBy="words"
                             direction="top"
-                            className="font-semibold text-nowrap text-primary  dark:text-slate-200 transition-all duration-300 ease-in-out"
-                        />  dedicated to sharpening skills in evolving frameworks. Continuously updated on industry trends and innovations to deliver dynamic, user-centric solutions. Eager to apply my technical expertise to impactful projects.🚀
+                            className="font-semibold text-nowrap text-primary dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out"
+                        />{" "}
+                        graduate, passionate and driven{" "}
+                        <BlurText
+                            text="web developer,"
+                            delay={150}
+                            animateBy="words"
+                            direction="top"
+                            className="font-semibold text-nowrap text-primary dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out"
+                        />{" "}
+                        dedicated to sharpening skills in evolving frameworks. Continuously updated
+                        on industry trends and innovations to deliver dynamic, user-centric
+                        solutions. Eager to apply my technical expertise to impactful projects. 🚀
                     </p>
+
                     <hr className="mt-4 w-full border-gray-300" />
                     <div className="w-full flex items-center justify-between gap-4">
                         <a href="">
-                            <span className="px-8 py-2.5 shadow-xl bg-primary rounded-full  text-secondary font-semibold flex items-center justify-center  dark:bg-slate-200 dark:text-primary transition-all duration-300 ease-in-out">
+                            <span id='cvBtn' className="px-8 py-2.5 shadow-xl bg-primary rounded-full  text-secondary font-semibold flex items-center justify-center  dark:bg-slate-200 dark:text-primary dark:transition-all dark:duration-300 dark:ease-in-out">
                                 <FaDownload className="mr-2" /> Download CV
                             </span>
                         </a>
-                        <ul className="flex items-center gap-4 text-gray-700 dark:text-slate-200 transition-all duration-300 ease-in-out">
+                        <ul id='socialLinks' className="flex items-center gap-4 text-gray-700 dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out">
                             <li>
-                                <a href="https://www.instagram.com/carlgabrielle/" target="_blank" rel="noopener noreferrer">
-                                    <FaInstagram size={26} />
+                                <a href="https://www.facebook.com/carl.gabrielle.716684/" target="_blank" rel="noopener noreferrer">
+                                    <FaFacebook size={26} />
                                 </a>
                             </li>
                             <li>

@@ -8,6 +8,8 @@ import { IoIosLink } from "react-icons/io";
 import { FaRegCopyright } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
 import { MdWbSunny } from "react-icons/md";
+import { Animations } from "../animations/gsap";
+
 const navItems = [
     { label: "Home", to: "hero", icon: <IoHome size={20} aria-hidden="true" /> },
     { label: "About", to: "about", icon: <FaUser size={20} aria-hidden="true" /> },
@@ -16,6 +18,11 @@ const navItems = [
 ];
 
 export default function Navbar() {
+
+    useEffect(() => {
+        Animations();
+    }, []);
+
     const [menuOpen, setMenuOpen] = useState(false);
     const [fadeIn, setFadeIn] = useState(false);
     const [activeSection, setActiveSection] = useState("hero");
@@ -74,15 +81,15 @@ export default function Navbar() {
                         aria-label="Homepage"
                         className="flex flex-col justify-center"
                     >
-                        <div className=" flex flex-col items-start text-primary   dark:text-slate-100  transition-all duration-300 ease-in-out">
-                            <h1 className="text-sm font-bold tracking-wide font-montserrat dark:text-slate-100 transition-all duration-300 ease-in-out">
+                        <div id="nameRole" className=" flex flex-col items-start text-primary   dark:text-slate-100  ">
+                            <h1 className="text-sm font-bold tracking-wide font-montserrat dark:text-slate-100 dark:transition-all dark:duration-300 dark:ease-in-out">
                                 Carl Gabrielle
                             </h1>
                             <span className="text-xs block font-light dark:text-slate-200 transition-all duration-300 ease-in-out">Web Developer</span>
                         </div>
                     </button>
 
-                    <ul className="hidden md:flex items-center gap-8 text-gray-700 dark:text-slate-300 text-sm font-medium">
+                    <ul id="navs" className="hidden md:flex items-center gap-8 text-gray-700 dark:text-slate-300 text-sm font-medium">
                         {navItems.map((item) => (
                             <li key={item.label} className="flex justify-center">
                                 <button
@@ -103,7 +110,7 @@ export default function Navbar() {
                         ))}
                     </ul>
 
-                    <div className="hidden md:flex items-center gap-4">
+                    <div id="cta" className="hidden md:flex items-center gap-4">
                         <a
                             href="https://www.linkedin.com/in/carl-gabrielle/"
                             target="_blank"

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from "react";
 import aboutImage from '../assets/images/aboutImg.jpg';
 import { FiMonitor } from 'react-icons/fi';
 import { BiServer } from 'react-icons/bi';
@@ -7,6 +7,8 @@ import { MdDevices } from 'react-icons/md';
 import { FiPenTool } from 'react-icons/fi';
 import { BsArrowReturnRight } from 'react-icons/bs';
 import { SectionHeader, SectionSubHeader } from './ui/SectionHeader';
+import { profileAnimations } from "../animations/gsap";
+
 
 const CardStyle = ({ children, className = '' }) => (
     <div className={`group p-6 rounded-xl border border-gray-300 transition-all duration-300 shadow-sm hover:shadow-md ${className}`}>
@@ -15,10 +17,10 @@ const CardStyle = ({ children, className = '' }) => (
 );
 
 const ServiceCard = ({ icon, title }) => (
-    <div className="service-card px-3 py-2 rounded-lg border border-gray-400 border-dashed dark:border-slate-200    shadow-sm hover:shadow-md transition-shadow dark:text-slate-200 dark:transition-all duration-300 ease-in-out">
+    <div className="service-card  services-card px-3 py-2  rounded-lg border border-gray-400 border-dashed dark:border-slate-200    shadow-sm hover:shadow-md transition-shadow dark:text-slate-200 dark:transition-all duration-300 ease-in-out">
         <div className="flex items-center space-x-3">
             <div className="rounded-full bg-primary-100 text-primary-600">{icon}</div>
-            <h4 className="font-medium text-gray-800 text-xs sm:text[2em] text-nowrap dark:text-slate-200 transition-all duration-300 ease-in-out">{title}</h4>
+            <h4 className=" font-medium text-gray-800 text-xs sm:text[2em] text-nowrap dark:text-slate-200 transition-all duration-300 ease-in-out">{title}</h4>
         </div>
     </div>
 );
@@ -38,29 +40,43 @@ const ParagraphBlock = ({ textParts = [] }) => (
 );
 
 export default function About() {
+    const sectionRef = useRef(null);
+
+    useEffect(() => {
+        const cleanup = profileAnimations(sectionRef);
+        return cleanup;
+    }, []);
+
     return (
-        <section id="about" className="w-full h-full dark:bg-dark   py-10 md:py-11 px-6  max-w-full  mx-auto scroll-mt-20 transition-all duration-300 ease-in-out ">
+        <section
+            ref={sectionRef}
+            id="about"
+            className="w-full h-full dark:bg-dark py-10 md:py-11 px-6 max-w-7xl mx-auto scroll-mt-20 transition-all duration-300 ease-in-out"
+        >
             <SectionHeader text="About Me" />
-            <div className="flex flex-col md:flex-col lg:flex-row items-center justify-center gap-6 px-4 mt-8">
-                <div className="flex flex-col items-center  md:items-center lg:items-start space-y-4 sm:space-y-0 sm:w-full w-auto">
+            <div className="grid grid-cols-1 lg:grid-cols-3 items-start gap-8 mt-8">
+
+                <div className="flex flex-col items-center lg:items-start space-y-4 w-full">
+
                     <img
                         id="aboutImage"
                         src={aboutImage}
                         alt="Portrait of the developer"
-                        className="w-full max-w-xs aspect-[2/3] object-cover rounded-xl grayscale hover:grayscale-0 transition duration-500 ease-in-out shadow-lg mb-2"
+                        className="max-w-sm  w-full aspect-[2/3] object-cover rounded-xl 
+                   grayscale hover:grayscale-0 transition duration-500 
+                   ease-in-out shadow-lg"
                     />
-                    <div className="mt-4 text-sm text-gray-600 font-medium tracking-wide text-center sm:text-left md:text-center lg:text-start dark:text-slate-200 transition-all duration-300 ease-in-out">
-                        <h1>
-                            A quiet moment, a cold brew, and big ideas brewing.
-                        </h1>
-                        <p className="mt-1 text-xs text-gray-500 italic font-light tracking-normal dark:text-slate-200 transition-all duration-300 ease-in-out">
+                    <div className="mt-4 text-sm text-gray-600 font-medium tracking-wide text-center lg:text-left dark:text-slate-200">
+                        <h1>A quiet moment, a cold brew, and big ideas brewing.</h1>
+                        <p className="mt-1 text-xs text-gray-500 italic font-light tracking-normal dark:text-slate-200">
                             June 13, 2024 · Tondaligan Beach
                         </p>
                     </div>
                 </div>
 
-                <div className="flex flex-col justify-center items-start space-y-4 sm:border-l-2 border-dashed dark:border-slate-200  transition-all duration-300 ease-in-out  md:border-0 lg:border-l-2 border-gray-400 sm:pl-6">
+                <div className="space-y-4 grid col-span-2 ">
                     <SectionSubHeader text="Get to know me" />
+
                     <ParagraphBlock
                         textParts={[
                             {
@@ -70,9 +86,10 @@ export default function About() {
                             },
                         ]}
                     />
+
                     <ParagraphBlock
                         textParts={[
-                            { content: 'I specialize in  web development with expertise in modern technologies including ', bold: false },
+                            { content: 'I specialize in web development with expertise in modern technologies including ', bold: false },
                             { content: 'React', bold: true },
                             { content: ', ', bold: false },
                             { content: 'TypeScript', bold: true },
@@ -87,34 +104,31 @@ export default function About() {
                             { content: ' for engaging animations. ', bold: false },
                         ]}
                     />
+
                     <ParagraphBlock
                         textParts={[
                             { content: 'Beyond solo projects, I actively collaborate using ', bold: false },
                             { content: 'Git', bold: true },
                             { content: ' and ', bold: false },
                             { content: 'GitHub', bold: true },
-                            { content: ' for version control, contributing to team-based development. I follow best practices like ', bold: false },
-                            { content: 'semantic commit messages', bold: true },
-                            { content: ', ', bold: false },
-                            { content: 'branch management', bold: true },
-                            { content: ', and ', bold: false },
-                            { content: 'pull request reviews', bold: true },
-                            { content: ' to ensure smooth teamwork. I stay current with modern tech stacks through continuous learning, experimenting with new tools in personal repositories and sharing knowledge through code reviews and documentation.', bold: false },
+                            { content: ' for version control, contributing to team-based development.', bold: false },
                         ]}
                     />
+
                     <div className="services-section space-y-6 w-full">
                         <div className="mb-4">
-                            <h3 className="text-lg font-semibold uppercase tracking-wider text-primary-600 dark:text-slate-200 transition-all duration-300 ease-in-out">
+                            <h3 className="text-lg font-semibold uppercase tracking-wider text-primary-600 dark:text-slate-200">
                                 Services I Provide
                             </h3>
                             <div className="flex items-center space-x-2 text-gray-500">
-                                <BsArrowReturnRight className='dark:text-slate-200 transition-all duration-300 ease-in-out' />
-                                <span className="text-sm font-medium dark:text-slate-200 transition-all duration-300 ease-in-out">
+                                <BsArrowReturnRight className="dark:text-slate-200" />
+                                <span className="text-sm font-medium dark:text-slate-200">
                                     I build user-friendly websites with a focus on design, performance, and functionality
                                 </span>
                             </div>
                         </div>
-                        <div className="grid grid-cols-1   sm:grid-cols-2  md:grid-cols-3  lg:grid-cols-4  gap-4">
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                             <ServiceCard icon={<FiMonitor size={18} />} title="Frontend Development" />
                             <ServiceCard icon={<BiServer size={18} />} title="Backend Development" />
                             <ServiceCard icon={<RiStackLine size={18} />} title="Full-Stack Development" />
@@ -125,5 +139,6 @@ export default function About() {
                 </div>
             </div>
         </section>
+
     );
 }
