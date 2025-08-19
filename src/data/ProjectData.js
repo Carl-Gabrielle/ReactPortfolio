@@ -16,6 +16,7 @@ export const projects = [
         techStack: ['React', 'Tailwind CSS', 'Framer Motion']
     },
     {
+        id: 1,
         title: 'BiliNao - E-commerce for Handicrafts',
         count: '02',
         view: 'Project Details',
@@ -37,10 +38,11 @@ export const projects = [
         techStack: ['React', 'Tailwind', 'Laravel', 'MySQL']
     },
     {
+        id: 2,
         title: 'OneHotel - Booking Management System',
         count: '03',
         view: 'Project Details',
-        status: 'In progress',
+        status: 'Completed',
         date: '2025',
         duration: '2 months',
         category: 'Hotel Booking System',
@@ -51,17 +53,34 @@ export const projects = [
         techStack: ['Laravel', 'React', 'Tailwind CSS', 'Shadcn UI', 'MySQL', 'Inertia.js']
     },
     {
+        id: 3,
         title: 'Itemaster - POS & Inventory System',
         count: '04',
         view: 'Project Details',
         status: 'Completed',
         date: '2025',
         duration: '3 months',
-        category: 'Business / Enterprise Applications',
+        category: 'Business / Enterprise Application',
         project: 'Internship Project',
         images: [B1, B2, B3, B4, B5, B6],
         description:
             'Inventory system with a POS module that tracks stock and manages item costs for accurate pricing. It simplifies inventory control and cost management.',
         techStack: ['Laravel', 'React', 'Tailwind CSS', 'Shadcn UI', 'MySQL', 'Inertia.js']
+    },
+    {
+        id: 4,
+        title: 'DriveEase- Car Rental System',
+        count: '05',
+        view: 'Project Details',
+        status: 'Completed',
+        date: '2025',
+        duration: '1 month',
+        category: 'Web Application',
+        project: 'Freelance Project',
+        images: [B1, B2, B3, B4, B5, B6],
+        description:
+            'Inventory system with a POS module that tracks stock and manages item costs for accurate pricing. It simplifies inventory control and cost management.',
+        techStack: ['Laravel', 'React', 'Tailwind CSS', 'Shadcn UI', 'MySQL', 'Inertia.js']
     }
+
 ];

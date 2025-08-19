@@ -9,6 +9,7 @@ import { FaRegCopyright } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
 import { MdWbSunny } from "react-icons/md";
 import { Animations } from "../animations/gsap";
+import { Link } from "react-router-dom";
 
 const navItems = [
     { label: "Home", to: "hero", icon: <IoHome size={20} aria-hidden="true" /> },

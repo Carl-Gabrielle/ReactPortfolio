@@ -24,7 +24,7 @@ export default function Footer() {
     };
 
     return (
-        <footer className="w-full bg-gray-100 border-t border-gray-300 dark:bg-dark">
+        <footer className="w-full bg-gray-100 border-t border-gray-300 dark:bg-dark ">
             <div
                 ref={footerRef}
                 className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6"
