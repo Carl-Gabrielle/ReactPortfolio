@@ -65,7 +65,7 @@ export default function TechStack() {
                     {frontStack.map((tech, i) => (
                         <div
                             key={i}
-                            className="front-card flex items-center gap-2 p-3 rounded-xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
+                            className="front-card flex items-center gap-2 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
                         >
                             <div className="text-[22px] sm:text-[24px] text-gray-700/90">
                                 {tech.icon}
@@ -88,7 +88,7 @@ export default function TechStack() {
                     {backStack.map((tech, i) => (
                         <div
                             key={i}
-                            className="back-card flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-xl dark:bg-containerDark dark:border-0 bg-white/80 backdrop-blur-sm border  border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200 w-full"
+                            className="back-card flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-2xl dark:bg-containerDark dark:border-0 bg-white/80 backdrop-blur-sm border  border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200 w-full"
                         >
                             <div className="text-[22px] sm:text-[24px] text-gray-700/90">
                                 {tech.icon}
@@ -99,8 +99,6 @@ export default function TechStack() {
                         </div>
                     ))}
                 </div>
-
-
             </div>
 
             <div className="flex flex-col items-center sm:items-start">
@@ -111,7 +109,7 @@ export default function TechStack() {
                     {toolStack.map((tech, i) => (
                         <div
                             key={i}
-                            className="tool-card flex items-center gap-3 p-3 rounded-xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
+                            className="tool-card flex items-center gap-3 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
                         >
                             <div className="text-[22px]">{tech.icon}</div>
                             <span className="text-gray-800 font-medium text-sm dark:text-slate-200">
