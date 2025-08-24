@@ -51,11 +51,11 @@ export default function About() {
         <section
             ref={sectionRef}
             id="about"
-            className="w-full h-full dark:bg-dark py-10 md:py-11 px-6 max-w-7xl mx-auto scroll-mt-20 transition-all duration-300 ease-in-out"
+            className="w-full h-full dark:bg-dark py-10 md:py-11 px-6 max-w-7xl mx-auto scroll-mt-20 transition-all duration-300 ease-in-out relative"
         >
+            <div className="absolute bottom-8 right-0 w-72 h-72 rounded-full bg-blue-500/20 blur-2xl "></div>
             <SectionHeader text="About Me" />
             <div className="grid grid-cols-1 lg:grid-cols-3 items-start gap-8 mt-8">
-
                 <div className="flex flex-col items-center lg:items-start space-y-4 w-full">
 
                     <img

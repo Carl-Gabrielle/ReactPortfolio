@@ -82,13 +82,12 @@ export default function TechStack() {
                     Backend Development
                 </div>
             </div>
-
             <div className="flex w-full justify-end px-3 sm:px-0">
                 <div className="grid grid-cols-2 sm:grid-cols-3 sm:w-auto w-full gap-3 sm:gap-4 auto-cols-fr">
                     {backStack.map((tech, i) => (
                         <div
                             key={i}
-                            className="back-card flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-2xl dark:bg-containerDark dark:border-0 bg-white/80 backdrop-blur-sm border  border-gray-100 shadow-sm hover:shadow-[0_3px_10px_rgba(0,0,0,0.08)] hover:-translate-y-0.5 transition-all duration-300 ease-out hover:border-gray-200 w-full"
+                            className="back-card flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm  w-full"
                         >
                             <div className="text-[22px] sm:text-[24px] text-gray-700/90">
                                 {tech.icon}

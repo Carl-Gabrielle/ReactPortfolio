@@ -21,7 +21,6 @@ export default function Projects() {
                     <MdOutlineKeyboardArrowRight className='text-lg' />
                 </button>
             </div> */}
-
         </section>
     );
 }

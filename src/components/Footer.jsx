@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 import { footerAnimations } from "../animations/gsap";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navItems = [
     { label: "Home", to: "hero" },
@@ -13,18 +14,35 @@ export default function Footer() {
     const [activeSection, setActiveSection] = useState("");
     const footerRef = useRef(null);
 
+    const navigate = useNavigate();
+    const location = useLocation();
+
     useEffect(() => {
         const cleanup = footerAnimations(footerRef);
         return cleanup;
     }, []);
 
     const scrollToSection = (id) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-        setActiveSection(id);
+        if (location.pathname !== "/") {
+            navigate("/", { state: { scrollTo: id } });
+        } else {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+            setActiveSection(id);
+        }
     };
 
+    useEffect(() => {
+        if (location.pathname === "/" && location.state?.scrollTo) {
+            const sectionId = location.state.scrollTo;
+            setTimeout(() => {
+                document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        }
+    }, [location]);
+
+
     return (
-        <footer className="w-full bg-gray-100 border-t border-gray-300 dark:bg-dark ">
+        <footer className="w-full bg-gray-100 border-t border-gray-300 dark:bg-dark">
             <div
                 ref={footerRef}
                 className="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6"
@@ -38,12 +56,15 @@ export default function Footer() {
                     </p>
                 </div>
 
-                <ul className="footer-animate flex flex-wrap items-center justify-center gap-6 text-sm" data-footer="nav">
+                <ul
+                    className="footer-animate flex flex-wrap items-center justify-center gap-6 text-sm"
+                    data-footer="nav"
+                >
                     {navItems.map((item) => (
                         <li key={item.label}>
                             <button
                                 onClick={() => scrollToSection(item.to)}
-                                className={`footer-nav-item hover:underline dark:text-slate-200 font-semibold text-gray-600 underline-offset-4 hover:text-gray-900 transition-all duration-300 ${activeSection === item.to ? "underline text-black" : ""
+                                className={`footer-nav-item hover:underline dark:text-slate-200 font-semibold text-gray-600 underline-offset-4 hover:text-gray-900 transition-all duration-300 ${activeSection === item.to ? "underline text-black dark:text-white" : ""
                                     }`}
                             >
                                 {item.label}
@@ -52,7 +73,10 @@ export default function Footer() {
                     ))}
                 </ul>
 
-                <div className="footer-animate flex gap-4 text-gray-600 dark:text-slate-200" data-footer="socials">
+                <div
+                    className="footer-animate flex gap-4 text-gray-600 dark:text-slate-200"
+                    data-footer="socials"
+                >
                     <a
                         href="https://www.facebook.com/carl.gabrielle.716684/"
                         target="_blank"

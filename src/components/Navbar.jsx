@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
 import { AiFillProject } from "react-icons/ai";
@@ -9,16 +10,17 @@ import { FaRegCopyright } from "react-icons/fa6";
 import { FaMoon } from "react-icons/fa";
 import { MdWbSunny } from "react-icons/md";
 import { Animations } from "../animations/gsap";
-import { Link } from "react-router-dom";
 
 const navItems = [
-    { label: "Home", to: "hero", icon: <IoHome size={20} aria-hidden="true" /> },
-    { label: "About", to: "about", icon: <FaUser size={20} aria-hidden="true" /> },
-    { label: "Projects", to: "projects", icon: <AiFillProject size={20} aria-hidden="true" /> },
-    { label: "Contact", to: "contacts", icon: <MdEmail size={20} aria-hidden="true" /> },
+    { label: "Home", to: "hero", icon: <IoHome size={20} /> },
+    { label: "About", to: "about", icon: <FaUser size={20} /> },
+    { label: "Projects", to: "projects", icon: <AiFillProject size={20} /> },
+    { label: "Contact", to: "contacts", icon: <MdEmail size={20} /> },
 ];
 
 export default function Navbar() {
+    const navigate = useNavigate();
+    const location = useLocation();
 
     useEffect(() => {
         Animations();
@@ -35,10 +37,24 @@ export default function Navbar() {
     const toggleMenu = () => setMenuOpen((prev) => !prev);
 
     const scrollToSection = (id) => {
-        document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-        setActiveSection(id);
-        closeMenu();
+        if (location.pathname !== "/") {
+            navigate("/", { state: { scrollTo: id } });
+        } else {
+            document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+            setActiveSection(id);
+            closeMenu();
+        }
     };
+
+    useEffect(() => {
+        if (location.pathname === "/" && location.state?.scrollTo) {
+            const sectionId = location.state.scrollTo;
+            setTimeout(() => {
+                document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+            }, 100);
+        }
+    }, [location]);
+
     useEffect(() => {
         if (darkMode) {
             document.documentElement.classList.add("dark");
@@ -82,17 +98,19 @@ export default function Navbar() {
                         aria-label="Homepage"
                         className="flex flex-col justify-center"
                     >
-                        <div id="nameRole" className=" flex flex-col items-start text-primary   dark:text-slate-100  ">
-                            <h1 className="text-sm font-bold tracking-wide font-montserrat dark:text-slate-100 dark:transition-all dark:duration-300 dark:ease-in-out">
+                        <div id="nameRole" className="flex flex-col items-start text-primary dark:text-slate-100">
+                            <h1 className="text-sm font-bold tracking-wide font-montserrat">
                                 Carl Gabrielle
                             </h1>
-                            <span className="text-xs block font-light dark:text-slate-200 transition-all duration-300 ease-in-out">Web Developer</span>
+                            <span className="text-xs block font-light dark:text-slate-200">
+                                Web Developer
+                            </span>
                         </div>
                     </button>
 
-                    <ul id="navs" className="hidden md:flex items-center gap-8 text-gray-700 dark:text-slate-300 text-sm font-medium">
+                    <ul className="hidden md:flex items-center gap-8 text-gray-700 dark:text-slate-300 text-sm font-medium">
                         {navItems.map((item) => (
-                            <li key={item.label} className="flex justify-center">
+                            <li id="navs" key={item.label} className="flex justify-center">
                                 <button
                                     onClick={() => scrollToSection(item.to)}
                                     className={`transition-all duration-200 hover:underline font-semibold underline-offset-4 ${activeSection === item.to
@@ -102,9 +120,7 @@ export default function Navbar() {
                                 >
                                     <div className="flex flex-col items-center gap-1">
                                         <span className="flex justify-center">{item.icon}</span>
-                                        <div>
-                                            <span>{item.label}</span>
-                                        </div>
+                                        <span>{item.label}</span>
                                     </div>
                                 </button>
                             </li>
@@ -122,19 +138,21 @@ export default function Navbar() {
                                 @carlgabrielle
                             </span>
                         </a>
-
                         <button
                             onClick={() => setDarkMode(!darkMode)}
-                            className="  transition"
                             aria-label="Toggle Dark Mode"
                         >
-                            {darkMode ? <FaMoon size={18} className="text-yellow-500" /> : < MdWbSunny size={18} className="text-yellow-500" />}
+                            {darkMode ? (
+                                <FaMoon size={18} className="text-yellow-500" />
+                            ) : (
+                                <MdWbSunny size={18} className="text-yellow-500" />
+                            )}
                         </button>
                     </div>
 
                     <button
                         onClick={toggleMenu}
-                        className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors duration-200"
+                        className="md:hidden text-gray-700 dark:text-gray-300 focus:outline-none p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800"
                         aria-label="Toggle navigation menu"
                     >
                         {menuOpen ? <HiOutlineX size={24} /> : <HiOutlineMenu size={24} />}
@@ -149,7 +167,7 @@ export default function Navbar() {
                     onClick={closeMenu}
                 >
                     <div
-                        className="md:hidden bg-white dark:bg-gray-900 rounded-lg shadow-sm absolute top-24 right-6 w-64 z-20 transition-colors duration-300"
+                        className="md:hidden bg-white dark:bg-gray-900 rounded-lg shadow-sm absolute top-24 right-6 w-64 z-20"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <ul className="flex flex-col items-start px-6 gap-4 py-4 text-gray-600 dark:text-gray-300 font-semibold">
@@ -165,7 +183,7 @@ export default function Navbar() {
                                 </li>
                             ))}
                             <li className="flex items-center gap-2">
-                                <IoIosLink size={20} aria-hidden="true" />
+                                <IoIosLink size={20} />
                                 <a
                                     href="https://www.linkedin.com/in/carl-gabrielle/"
                                     target="_blank"
@@ -178,9 +196,13 @@ export default function Navbar() {
                             <li>
                                 <button
                                     onClick={() => setDarkMode(!darkMode)}
-                                    className="mt-2 flex items-center gap-2 p-2 rounded bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 transition"
+                                    className="mt-2 flex items-center gap-2  font-medium dark:bg-gray-700 text-gray-700 dark:text-gray-200"
                                 >
-                                    {darkMode ? <FaMoon size={18} className="text-yellow-500" /> : < MdWbSunny size={18} className="text-yellow-500" />}
+                                    {darkMode ? (
+                                        <FaMoon size={18} className="text-yellow-500" />
+                                    ) : (
+                                        <MdWbSunny size={18} className="text-yellow-500" />
+                                    )}
                                     {darkMode ? "Dark Mode" : "Light Mode"}
                                 </button>
                             </li>

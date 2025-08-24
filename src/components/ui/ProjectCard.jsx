@@ -17,18 +17,15 @@ export const ProjectCard = ({ project, isFirst }) => {
             className="relative z-20 w-full h-72 bg-white rounded-tl-3xl rounded-br-3xl group overflow-hidden dark:bg-containerDark dark:border-0"
         >
             <div className="absolute z-20 inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div
+            <img
+                src={project.thumbnail}
+                alt="Project Thumbnail"
                 aria-hidden="true"
-                className="absolute w-full h-full transition-transform duration-1000 ease-in-out group-hover:scale-110 rounded-2xl"
-                style={{
-                    backgroundImage: `url(${project.thumbnail})`,
-                    backgroundSize: "70%",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat",
-                }}
+                className="absolute w-full h-full object-cover   transition-transform duration-1000 ease-in-out group-hover:scale-110 "
             />
+
             <div className="absolute top-4 right-4 z-20">
-                <span className="bg-gray-900 text-white px-3 py-1 text-sm font-medium rounded-lg dark:text-primary dark:bg-slate-100">
+                <span className="bg-primary shadow-md text-white px-3 py-1 text-sm font-medium rounded-lg dark:text-primary dark:bg-slate-100">
                     {project.title}
                 </span>
             </div>
@@ -47,13 +44,20 @@ export const ProjectCard = ({ project, isFirst }) => {
             ) : (
                 <Link
                     to={`/projects/${encodeURIComponent(project.title)}`}
-                    className="absolute bottom-6 right-6 z-20 flex items-center gap-2 px-4 py-2.5 bg-gray-100 dark:bg-slate-100 rounded-lg shadow-sm border border-gray-100 hover:shadow-md transition-all duration-200 ease-in-out group"
+                    className="absolute bottom-6 right-6 z-20 flex items-center gap-2 px-4 py-2.5 
+             rounded-xl shadow-lg border border-white/20
+             bg-gradient-to-br from-white/70 to-white/40 
+             backdrop-blur-md hover:backdrop-blur-xl
+             transition-all duration-300 ease-out
+             group"
                     aria-label={`View ${project.view} project`}
                 >
-                    <span className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors">
+                    <span className="absolute inset-0 -z-10 rounded-xl bg-white/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+
+                    <span className="text-sm font-semibold text-gray-800 tracking-wide group-hover:text-gray-900">
                         {project.view}
                     </span>
-                    <FiArrowUpRight className="text-gray-500 group-hover:text-gray-700 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    <FiArrowUpRight className="text-gray-600 group-hover:text-gray-900 transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1" />
                 </Link>
             )
             }

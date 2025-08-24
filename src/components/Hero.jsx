@@ -20,7 +20,6 @@ export default function Hero() {
                     delay={50}
                     animateBy="chars"
                     direction="top"
-                    onAnimationComplete={() => console.log('Number animation completed')}
                     className="text-1xl sm:text-2xl font-bold text-gray-600 bg-white bg-opacity-60 backdrop-blur-md shadow-md border  transition-all duration-300 ease-in-out dark:bg-containerDark dark:border-containerDark dark:text-slate-200 border-zinc-300 px-6 rounded-2xl"
                 />
                 <BlurText
@@ -28,7 +27,6 @@ export default function Hero() {
                     delay={150}
                     animateBy="words"
                     direction="top"
-                    onAnimationComplete={() => console.log('Description animation completed')}
                     className="text-gray-500 text-center text-md dark:text-slate-200"
                 />
             </div>
