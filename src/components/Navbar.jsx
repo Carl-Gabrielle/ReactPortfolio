@@ -167,7 +167,7 @@ export default function Navbar() {
                     onClick={closeMenu}
                 >
                     <div
-                        className="md:hidden bg-white dark:bg-gray-900 rounded-lg shadow-sm absolute top-24 right-6 w-64 z-20"
+                        className="md:hidden bg-white dark:bg-containerDark rounded-lg shadow-sm absolute top-24 right-6 w-64 z-20"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <ul className="flex flex-col items-start px-6 gap-4 py-4 text-gray-600 dark:text-gray-300 font-semibold">
@@ -196,7 +196,7 @@ export default function Navbar() {
                             <li>
                                 <button
                                     onClick={() => setDarkMode(!darkMode)}
-                                    className="mt-2 flex items-center gap-2  font-medium dark:bg-gray-700 text-gray-700 dark:text-gray-200"
+                                    className="mt-2 flex items-center gap-2  font-medium  text-gray-700  dark:text-gray-200"
                                 >
                                     {darkMode ? (
                                         <FaMoon size={18} className="text-yellow-500" />
