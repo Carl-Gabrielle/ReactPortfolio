@@ -51,7 +51,7 @@ export default function Hero() {
                         <HiLocationMarker className="text-indigo-600 group-hover:text-indigo-700 transition-colors" size={18} />
                         <div className="flex flex-col leading-tight ">
                             <span className="text-sm font-medium text-gray-900 dark:text-slate-200  dark:transition-all dark:duration-300 dark:ease-in-out">Alaminos City, Pangasinan</span>
-                            <span className="text-xs text-gray-500 dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out">Philippines • 1 Year of  Experience</span>
+                            <span className="text-xs text-gray-500 dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out">    Philippines • 22 y/o • 1 Year Experience</span>
                         </div>
                     </div>
 
@@ -75,17 +75,17 @@ export default function Hero() {
                             direction="top"
                             className="font-semibold text-nowrap text-primary dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out"
                         />{" "}
-                        graduate, passionate and driven{" "}
+                        graduate and  passionate {" "}
                         <BlurText
-                            text="web developer,"
+                            text="web developer," w
                             delay={150}
                             animateBy="words"
                             direction="top"
                             className="font-semibold text-nowrap text-primary dark:text-slate-200 dark:transition-all dark:duration-300 dark:ease-in-out"
                         />{" "}
-                        dedicated to sharpening skills in evolving frameworks. Continuously updated
-                        on industry trends and innovations to deliver dynamic, user-centric
-                        solutions. Eager to apply my technical expertise to impactful projects. 🚀
+                        dedicated to mastering modern frameworks and best practices.
+                        I stay current with industry trends to build dynamic,
+                        user-focused solutions and am eager to apply my technical expertise to meaningful, impactful projects. 🚀
                     </p>
 
                     <hr className="mt-4 w-full border-gray-300" />

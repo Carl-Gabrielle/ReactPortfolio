@@ -45,6 +45,56 @@ export default function TechStack() {
         staggerFadeIn(document.querySelectorAll(".tool-card"), 0.4);
     }, []);
 
+    const TechStackSection = ({ title, stack, variant = "default" }) => {
+        const isBackend = variant === "backend";
+        return (
+            <div
+                className={`flex flex-col mb-6 ${isBackend ? "items-center sm:items-end sm:justify-end justify-center" : "items-center sm:items-start"
+                    }`}
+            >
+                <div
+                    className={`inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8 ${isBackend ? "dark:bg-black" : ""
+                        }`}
+                >
+                    {title}
+                </div>
+                <div
+                    className={`${isBackend
+                        ? "flex w-full justify-end px-3 sm:px-0"
+                        : "w-full"
+                        }`}
+                >
+                    <div
+                        className={`grid gap-3 sm:gap-4 ${isBackend
+                            ? "grid-cols-2 sm:grid-cols-3 sm:w-auto w-full auto-cols-fr"
+                            : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
+                            }`}
+                    >
+                        {stack.map((tech, i) => (
+                            <div
+                                key={i}
+                                className={`flex items-center p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm
+                ${isBackend ? "back-card gap-2 sm:gap-4 sm:px-12 w-full" : "front-card gap-2"}`}
+                            >
+                                <div className="text-[22px] sm:text-[24px] text-gray-700/90">
+                                    {tech.icon}
+                                </div>
+                                <span
+                                    className={`text-gray-800 font-medium dark:text-slate-200 ${isBackend
+                                        ? "text-sm sm:text-[13px] tracking-tight transition-all duration-300 ease-in-out"
+                                        : "text-sm sm:text-[13px]"
+                                        }`}
+                                >
+                                    {tech.name}
+                                </span>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        );
+    };
+
     return (
         <section
             id="techstack"
@@ -56,67 +106,10 @@ export default function TechStack() {
                     An overview of the tech stack I use to create web applications
                 </p>
             </div>
-
-            <div className="flex flex-col items-center sm:items-start mb-6">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8">
-                    Frontend Development
-                </div>
-                <div className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                    {frontStack.map((tech, i) => (
-                        <div
-                            key={i}
-                            className="front-card flex items-center gap-2 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
-                        >
-                            <div className="text-[22px] sm:text-[24px] text-gray-700/90">
-                                {tech.icon}
-                            </div>
-                            <span className="text-gray-800 font-medium text-sm sm:text-[13px] dark:text-slate-200">
-                                {tech.name}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-            <div className="flex flex-col items-center sm:items-end mb-6 sm:justify-end justify-center">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8 dark:bg-black ">
-                    Backend Development
-                </div>
-            </div>
-            <div className="flex w-full justify-end px-3 sm:px-0">
-                <div className="grid grid-cols-2 sm:grid-cols-3 sm:w-auto w-full gap-3 sm:gap-4 auto-cols-fr">
-                    {backStack.map((tech, i) => (
-                        <div
-                            key={i}
-                            className="back-card flex items-center gap-2 sm:gap-4 p-3 sm:px-12 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm  w-full"
-                        >
-                            <div className="text-[22px] sm:text-[24px] text-gray-700/90">
-                                {tech.icon}
-                            </div>
-                            <span className="text-gray-800 font-medium text-sm sm:text-[13px] tracking-tight dark:text-slate-200 transition-all duration-300 ease-in-out">
-                                {tech.name}
-                            </span>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            <div className="flex flex-col items-center sm:items-start">
-                <div className="inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8">
-                    Tools & Platforms
-                </div>
-                <div className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-                    {toolStack.map((tech, i) => (
-                        <div
-                            key={i}
-                            className="tool-card flex items-center gap-3 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
-                        >
-                            <div className="text-[22px]">{tech.icon}</div>
-                            <span className="text-gray-800 font-medium text-sm dark:text-slate-200">
-                                {tech.name}
-                            </span>
-                        </div>
-                    ))}
-                </div>
+            <div className="space-y-12">
+                <TechStackSection title="Frontend Development" stack={frontStack} />
+                <TechStackSection title="Backend Development" stack={backStack} variant="backend" />
+                <TechStackSection title="Tools & Platforms" stack={toolStack} />
             </div>
         </section >
     );

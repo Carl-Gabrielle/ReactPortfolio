@@ -30,7 +30,7 @@ export const ProjectCard = ({ project, isFirst }) => {
                 </span>
             </div>
 
-            <div className="absolute bottom-4 left-4 z-20">
+            <div className="absolute bottom-4 left-2 z-20">
                 <span className="text-primary text-2xl font-bold opacity-80 dark:text-slate-200">
                     {project.count}
                 </span>

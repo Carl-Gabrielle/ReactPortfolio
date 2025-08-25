@@ -81,7 +81,7 @@ export default function About() {
                         textParts={[
                             {
                                 content:
-                                    'My journey into web development began with a curiosity about how websites are built and a desire to bring ideas to life through code. What started as a hobby quickly evolved into a passion for creating intuitive, accessible digital experiences.',
+                                    'My journey into web development began with a curiosity about how websites are built and a drive to transform ideas into interactive digital experiences. What started as a hobby has grown into a passion for designing and developing intuitive, user-friendly, and accessible applications.',
                                 bold: false,
                             },
                         ]}
@@ -89,29 +89,29 @@ export default function About() {
 
                     <ParagraphBlock
                         textParts={[
-                            { content: 'I specialize in web development with expertise in modern technologies including ', bold: false },
+                            { content: 'I specialize in building modern, responsive web solutions using technologies such as ', bold: false },
                             { content: 'React', bold: true },
                             { content: ', ', bold: false },
                             { content: 'TypeScript', bold: true },
                             { content: ', and ', bold: false },
                             { content: 'Laravel', bold: true },
                             { content: '. My toolkit includes ', bold: false },
-                            { content: 'Tailwind CSS', bold: true },
-                            { content: ', ', bold: false },
-                            { content: 'Shadcn UI', bold: true },
-                            { content: ' for efficient styling and ', bold: false },
-                            { content: 'GSAP', bold: true },
-                            { content: ' for engaging animations. ', bold: false },
+                            { content: 'Tailwind CSS ', bold: true },
+                            { content: 'and ', bold: false },
+                            { content: 'Shadcn UI ', bold: true },
+                            { content: 'for efficient, scalable styling, as well as ', bold: false },
+                            { content: 'GSAP ', bold: true },
+                            { content: 'for creating smooth, engaging animations. ', bold: false },
                         ]}
                     />
 
                     <ParagraphBlock
                         textParts={[
-                            { content: 'Beyond solo projects, I actively collaborate using ', bold: false },
+                            { content: 'In addition to working on personal projects, I thrive in collaborative environments, leveraging ', bold: false },
                             { content: 'Git', bold: true },
                             { content: ' and ', bold: false },
-                            { content: 'GitHub', bold: true },
-                            { content: ' for version control, contributing to team-based development.', bold: false },
+                            { content: 'GitHub ', bold: true },
+                            { content: 'for version control and contributing effectively to team-based development workflows. My focus is on writing clean, maintainable code while continuously expanding my skills to stay aligned with evolving industry standards.', bold: false },
                         ]}
                     />
 
