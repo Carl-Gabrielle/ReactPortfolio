@@ -7,7 +7,22 @@ gsap.registerPlugin(ScrollTrigger);
 export const Animations = () => {
     const text = new SplitType("#hero-text", { types: "chars" });
     const characters = document.querySelectorAll(".char");
-
+    gsap.set("#primBadge", { opacity: 0, y: 20 });
+    gsap.to("#primBadge", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.7,
+        ease: "power1.out",
+    });
+    gsap.set("#seconBadge", { opacity: 0, y: 20 });
+    gsap.to("#seconBadge", {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        delay: 0.7,
+        ease: "power1.out",
+    });
     gsap.set(characters, { y: "100%", opacity: 0 });
     gsap.to(characters, {
         y: "0%",
