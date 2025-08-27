@@ -26,7 +26,7 @@ const ServiceCard = ({ icon, title }) => (
 );
 
 const ParagraphBlock = ({ textParts = [] }) => (
-    <p className="text-gray-700 text-sm mt-4 leading-8 text-justify dark:text-slate-200 transition-all duration-300 ease-in-out">
+    <p className="text-gray-700 text-base mt-4 leading-8 text-justify dark:text-slate-200 transition-all duration-300 ease-in-out">
         {textParts.map((part, index) =>
             part.bold ? (
                 <strong key={index} className="font-semibold text-gray-700 dark:text-slate-200 transition-all duration-300 ease-in-out">

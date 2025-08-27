@@ -6,7 +6,7 @@ import BlurText from "./BlurText";
 import { HiLocationMarker } from 'react-icons/hi';
 import { useEffect } from "react";
 import { Animations } from "../animations/gsap";
-
+import cvFile from '../assets/Carl-Orfinada-CV.pdf';
 export default function Hero() {
 
     useEffect(() => {
@@ -116,8 +116,11 @@ export default function Hero() {
 
                         <hr className="mt-4 w-full border-gray-300" />
                         <div className="w-full flex items-center justify-between gap-4">
-                            <a href="">
-                                <span id='cvBtn' className="px-8 py-2.5 shadow-xl bg-primary rounded-full  text-secondary font-semibold flex items-center justify-center  dark:bg-slate-200 dark:text-primary dark:transition-all dark:duration-300 dark:ease-in-out">
+                            <a href={cvFile} target="_blank" rel="noopener noreferrer">
+                                <span
+                                    id="cvBtn"
+                                    className="px-8 py-2.5 shadow-xl bg-primary rounded-full text-secondary font-semibold flex items-center justify-center dark:bg-slate-200 dark:text-primary dark:transition-all dark:duration-300 dark:ease-in-out"
+                                >
                                     <FaDownload className="mr-2" /> Download CV
                                 </span>
                             </a>
