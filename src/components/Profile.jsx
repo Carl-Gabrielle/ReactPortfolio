@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 import { SectionTitle } from './ui/SectionHeader';
-import AcnhsLogo from '../assets/images/AcnhsLogo.png';
-import PsuLogo from '../assets/images/psuLogo.png';
-import AccsLogo from '../assets/images/AccsLogo.png';
+import AcnhsLogo from '../assets/images/AcnhsLogo.webp';
+import PsuLogo from '../assets/images/psuLogo.webp';
+import AccsLogo from '../assets/images/AccsLogo.webp';
 import { LiaCertificateSolid } from "react-icons/lia";
 import { PiGraduationCap } from "react-icons/pi";
 import { IoBriefcaseOutline } from "react-icons/io5";
@@ -133,13 +133,13 @@ export default function Profile() {
                             />
                             <div className="mt-6">
                                 <ExperienceCard
-                                    role="Full-Stack Developer"
+                                    role="Full-Stack Web Developer"
                                     company="Freelance"
                                     date="June 2025 – Present"
                                     description="Building modern, responsive, and intuitive web applications with clean, maintainable code."
                                 />
                                 <ExperienceCard
-                                    role="Full-Stack Developer Intern"
+                                    role="Full-Stack Web Developer Intern"
                                     company="Techniqal Group MCS"
                                     date="Jan 2025 – June 2025"
                                     description="Contributed to the development of an Inventory Management System with POS module."

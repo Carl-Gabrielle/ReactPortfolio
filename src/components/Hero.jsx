@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaDownload, FaGithub } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaFacebook, FaLaptopCode } from "react-icons/fa";
-import ProfileImage from '../assets/images/profile.jpeg';
+import ProfileImage from '../assets/images/profile.webp';
 import BlurText from "./BlurText";
 import { HiLocationMarker } from 'react-icons/hi';
 import { useEffect } from "react";
@@ -67,11 +67,16 @@ export default function Hero() {
                             aria-label="Portfolio preview image"
                             className="w-80 h-96  rounded-2xl shadow-inner overflow-hidden  "
                         >
-                            <img
-                                src={ProfileImage}
-                                alt="Portfolio preview image"
-                                className="w-full h-full object-cover  transition duration-500 ease-in-out transform hover:scale-105"
-                            />
+                            <picture className="relative group overflow-hidden rounded-2xl shadow-lg">
+                                <img
+                                    loading="lazy"
+                                    src={ProfileImage}
+                                    alt="Portfolio preview image"
+                                    className="w-full h-full object-cover transition duration-500 ease-in-out transform group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/30 to-transparent opacity-70 group-hover:opacity-90 transition duration-500"></div>
+                            </picture>
+
                         </div>
                         <div id='address' className="hidden md:flex absolute -bottom-3 left-3 items-center gap-2 px-3 py-2 dark:border-containerDark  dark:bg-containerDark  bg-white/60 backdrop-blur-sm rounded-full border border-gray-200/80 shadow-sm hover:shadow dark:transition-all dark:duration-300 group max-w-fit">
                             <HiLocationMarker className="text-indigo-600 group-hover:text-indigo-700 transition-colors" size={18} />

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import aboutImage from '../assets/images/aboutImg.jpg';
+import aboutImage from '../assets/images/aboutImg.webp';
 import { FiMonitor } from 'react-icons/fi';
 import { BiServer } from 'react-icons/bi';
 import { RiStackLine } from 'react-icons/ri';

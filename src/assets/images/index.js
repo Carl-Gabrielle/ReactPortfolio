@@ -1,41 +1,40 @@
-import B1 from './B1.png';
-import B2 from './B2.png';
-import B3 from './B3.png';
-import B4 from './B4.png';
-import B5 from './B5.png';
-import B6 from './B6.png';
-import B7 from './B7.png';
-import B8 from './B8.png';
+import B1 from './B1.webp';
+import B2 from './B2.webp';
+import B3 from './B3.webp';
+import B4 from './B4.webp';
+import B5 from './B5.webp';
+import B6 from './B6.webp';
+import B7 from './B7.webp';
+import B8 from './B8.webp';
 
-import C1 from './C1.png';
-import C2 from './C2.png';
-import C3 from './C3.png';
-import C4 from './C4.png';
-import C5 from './C5.png';
-import C6 from './C6.png';
-import C7 from './C7.png';
-import C8 from './C8.png';
+import C1 from './C1.webp';
+import C2 from './C2.webp';
+import C3 from './C3.webp';
+import C4 from './C4.webp';
+import C5 from './C5.webp';
+import C6 from './C6.webp';
+import C7 from './C7.webp';
+import C8 from './C8.webp';
 
-import D1 from './D1.png';
-import D2 from './D2.png';
-import D3 from './D3.png';
-import D4 from './D4.png';
-import D5 from './D5.png';
-import D6 from './D6.png';
+import D1 from './D1.webp';
+import D2 from './D2.webp';
+import D3 from './D3.webp';
+import D4 from './D4.webp';
+import D5 from './D5.webp';
+import D6 from './D6.webp';
 
-import E1 from './E1.png';
-import E2 from './E2.png';
-import E3 from './E3.png';
-import E4 from './E4.png';
-import E5 from './E5.png';
-import E6 from './E6.png';
+import E1 from './E1.webp';
+import E2 from './E2.webp';
+import E3 from './E3.webp';
+import E4 from './E4.webp';
+import E5 from './E5.webp';
+import E6 from './E6.webp';
 
-import PortfolioThumb from './E-Portfolio_Mockup.png';
-import Bthumb from './Bthumb.png';
-import Ethumb from './Ethumb.png';
-import Dthumb from './Dthumb.png';
-import Cthumb from './Cthumb.png';
-
+import PortfolioThumb from './E-Portfolio_Mockup.webp';
+import Bthumb from './Bthumb.webp';
+import Ethumb from './Ethumb.webp';
+import Dthumb from './Dthumb.webp';
+import Cthumb from './Cthumb.webp';
 
 
 export const B = [B1, B2, B3, B4, B5, B6, B7, B8];

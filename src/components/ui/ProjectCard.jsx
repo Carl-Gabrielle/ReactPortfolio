@@ -18,12 +18,12 @@ export const ProjectCard = ({ project, isFirst }) => {
         >
             <div className="absolute z-20 inset-0 bg-gradient-to-br from-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <img
+                loading="lazy"
                 src={project.thumbnail}
                 alt="Project Thumbnail"
                 aria-hidden="true"
                 className="absolute w-full h-full object-cover   transition-transform duration-1000 ease-in-out group-hover:scale-110 "
             />
-
             <div className="absolute top-4 right-4 z-20">
                 <span className="bg-primary shadow-md text-white px-3 py-1 text-sm font-medium rounded-lg dark:text-primary dark:bg-slate-100">
                     {project.title}
