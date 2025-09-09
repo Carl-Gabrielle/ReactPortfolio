@@ -10,6 +10,11 @@ export const ProjectCard = ({ project, isFirst }) => {
             projectCardAnimation(cardRef.current);
         }
     }, []);
+    const slugify = (text) =>
+        text
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/(^-|-$)+/g, "");
 
     return (
         <div
@@ -43,7 +48,7 @@ export const ProjectCard = ({ project, isFirst }) => {
                 </div>
             ) : (
                 <Link
-                    to={`/projects/${encodeURIComponent(project.title)}`}
+                    to={`/projects/${slugify(project.title)}`}
                     className="absolute bottom-6 right-6 z-20 flex items-center gap-2 px-4 py-2.5 
              rounded-xl shadow-lg border border-white/20
              bg-gradient-to-br from-white/70 to-white/40 

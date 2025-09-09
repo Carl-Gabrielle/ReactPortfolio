@@ -1,6 +1,12 @@
 import { useParams } from "react-router-dom";
 import { projects } from "../data/ProjectData";
 
+const slugify = (text) =>
+    text
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/(^-|-$)+/g, "");
+
 const NotFound = () => (
     <div className="flex flex-col items-center justify-center py-20">
         <h1 className="text-2xl font-bold text-red-500">Project not found</h1>
@@ -110,10 +116,7 @@ const ProjectGallery = ({ project }) => (
 export default function ProjectPage() {
     const { id } = useParams();
 
-    const project = projects.find(
-        (p) => p.title.toLowerCase() === decodeURIComponent(id).toLowerCase()
-    );
-
+    const project = projects.find((p) => slugify(p.title) === id);
     if (!project) return <NotFound />;
 
     return (
