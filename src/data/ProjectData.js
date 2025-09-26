@@ -86,32 +86,32 @@ export const projects = [
         ],
         techStack: ['Laravel', 'React', 'Typescript', 'Tailwind CSS', 'Shadcn UI', 'MySQL', 'Inertia.js']
     },
-    {
-        id: 4,
-        title: 'DriveEasy – Driver Training & Certification',
-        count: '05',
-        view: 'Project Details',
-        thumbnail: Cthumb,
-        date: '2025',
-        duration: '1 month',
-        category: 'Assessment & Certification System',
-        project: 'Freelance Project',
-        images: C,
-        description:
-            'DriveEasy guides student drivers through a structured and supportive learning process, from lessons to performance assessment.',
-        details:
-            'Students receive clear performance ratings and personalized feedback from instructors. Those who need extra practice get targeted learning interventions, while simulated lessons and review sessions help every learner build confidence and skill behind the wheel.',
-        features: [
-            "User Authentication",
-            "Student Profiles",
-            "Lesson Scheduling",
-            "Performance Assessment",
-            "Feedback & Progress Reports",
-            "Learning Interventions",
-            "Simulated Practice",
-            "Certificate Issuance"
-        ],
-        techStack: ['Laravel', 'React', 'Tailwind CSS', 'Shadcn UI', 'MySQL', 'Inertia.js']
-    }
+    // {
+    //     id: 4,
+    //     title: 'DriveEasy – Driver Training & Certification',
+    //     count: '05',
+    //     view: 'Project Details',
+    //     thumbnail: Cthumb,
+    //     date: '2025',
+    //     duration: '1 month',
+    //     category: 'Assessment & Certification System',
+    //     project: 'Freelance Project',
+    //     images: C,
+    //     description:
+    //         'DriveEasy guides student drivers through a structured and supportive learning process, from lessons to performance assessment.',
+    //     details:
+    //         'Students receive clear performance ratings and personalized feedback from instructors. Those who need extra practice get targeted learning interventions, while simulated lessons and review sessions help every learner build confidence and skill behind the wheel.',
+    //     features: [
+    //         "User Authentication",
+    //         "Student Profiles",
+    //         "Lesson Scheduling",
+    //         "Performance Assessment",
+    //         "Feedback & Progress Reports",
+    //         "Learning Interventions",
+    //         "Simulated Practice",
+    //         "Certificate Issuance"
+    //     ],
+    //     techStack: ['Laravel', 'React', 'Tailwind CSS', 'Shadcn UI', 'MySQL', 'Inertia.js']
+    // }
 
 ];
