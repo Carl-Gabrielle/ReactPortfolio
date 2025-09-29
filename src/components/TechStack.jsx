@@ -2,12 +2,13 @@ import { useEffect } from "react";
 import { SectionHeader } from "./ui/SectionHeader";
 import { staggerFadeIn } from "../animations/gsap";
 import {
-    FaReact, FaNodeJs, FaLaravel, FaPhp, FaHtml5, FaCss3Alt,
-    FaJsSquare, FaDatabase, FaGitAlt, FaGithub
+    FaReact, FaLaravel, FaPhp, FaHtml5, FaCss3Alt,
+    FaJsSquare, FaGitAlt, FaGithub,
+    FaNodeJs
 } from "react-icons/fa";
 import {
     SiBootstrap, SiTailwindcss, SiInertia, SiGreensock,
-    SiMysql, SiJira, SiVercel, SiShadcnui, SiTypescript
+    SiMysql, SiJira, SiVercel, SiShadcnui, SiTypescript, SiMongodb, SiExpress, SiNpm, SiNetlify
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
 
@@ -28,6 +29,9 @@ const backStack = [
     { name: "PHP", icon: <FaPhp className="text-[#777BB4]" /> },
     { name: "Laravel", icon: <FaLaravel className="text-[#FF2D20]" /> },
     { name: "MySQL", icon: <SiMysql className="text-[#4479A1]" /> },
+    { name: "Node jS", icon: <FaNodeJs className="text-[#777BB4]" /> },
+    { name: "MongoDB", icon: <SiMongodb className="text-[#47A248]" /> },
+    { name: "Express", icon: <SiExpress className="text-[#000000]" /> },
 ];
 
 const toolStack = [
@@ -36,64 +40,47 @@ const toolStack = [
     { name: "VS Code", icon: <VscVscode className="text-[#007ACC]" /> },
     { name: "Jira", icon: <SiJira className="text-[#0052CC]" /> },
     { name: "Vercel", icon: <SiVercel className="text-black" /> },
+    { name: "NPM", icon: <SiNpm className="text-[#CB3837]" /> },
+    { name: "Netlify", icon: <SiNetlify className="text-[#00C7B7]" /> },
 ];
 
 export default function TechStack() {
     useEffect(() => {
-        staggerFadeIn(document.querySelectorAll(".front-card"));
-        staggerFadeIn(document.querySelectorAll(".back-card"), 0.2);
-        staggerFadeIn(document.querySelectorAll(".tool-card"), 0.4);
+        staggerFadeIn(document.querySelectorAll(".tech-card"));
     }, []);
 
-    const TechStackSection = ({ title, stack, variant = "default" }) => {
-        const isBackend = variant === "backend";
-        return (
+    const TechStackSection = ({ title, stack, align = "left" }) => (
+        <div
+            className={`flex flex-col mb-6 
+            ${align === "right"
+                    ? "items-center sm:items-end sm:justify-end justify-center"
+                    : "items-center sm:items-start"}`}
+        >
             <div
-                className={`flex flex-col mb-6 ${isBackend ? "items-center sm:items-end sm:justify-end justify-center" : "items-center sm:items-start"
-                    }`}
+                className={`inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8 
+                ${align === "right" ? "dark:bg-black" : ""}`}
             >
-                <div
-                    className={`inline-flex px-4 py-1.5 rounded-full bg-primary text-secondary text-md font-medium mb-8 ${isBackend ? "dark:bg-black" : ""
-                        }`}
-                >
-                    {title}
-                </div>
-                <div
-                    className={`${isBackend
-                        ? "flex w-full justify-end px-3 sm:px-0"
-                        : "w-full"
-                        }`}
-                >
-                    <div
-                        className={`grid gap-3 sm:gap-4 ${isBackend
-                            ? "grid-cols-2 sm:grid-cols-3 sm:w-auto w-full auto-cols-fr"
-                            : "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
-                            }`}
-                    >
-                        {stack.map((tech, i) => (
-                            <div
-                                key={i}
-                                className={`flex items-center p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm
-                ${isBackend ? "back-card gap-2 sm:gap-4 sm:px-12 w-full" : "front-card gap-2"}`}
-                            >
-                                <div className="text-[22px] sm:text-[24px] text-gray-700/90">
-                                    {tech.icon}
-                                </div>
-                                <span
-                                    className={`text-gray-800 font-medium dark:text-slate-200 ${isBackend
-                                        ? "text-sm sm:text-[13px] tracking-tight transition-all duration-300 ease-in-out"
-                                        : "text-sm sm:text-[13px]"
-                                        }`}
-                                >
-                                    {tech.name}
-                                </span>
+                {title}
+            </div>
+            <div className="w-full">
+                <div className="grid gap-3 sm:gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+                    {stack.map((tech, i) => (
+                        <div
+                            key={i}
+                            className="tech-card flex items-center gap-2 p-3 rounded-2xl bg-white/80 backdrop-blur-sm border dark:bg-containerDark dark:border-0 border-gray-100 shadow-sm"
+                        >
+                            <div className="text-[22px] sm:text-[24px] text-gray-700/90">
+                                {tech.icon}
                             </div>
-                        ))}
-                    </div>
+                            <span className="text-gray-800 font-medium dark:text-slate-200 text-sm sm:text-[13px]">
+                                {tech.name}
+                            </span>
+                        </div>
+                    ))}
                 </div>
             </div>
-        );
-    };
+        </div>
+    );
 
     return (
         <section
@@ -108,9 +95,9 @@ export default function TechStack() {
             </div>
             <div className="space-y-12">
                 <TechStackSection title="Frontend Development" stack={frontStack} />
-                <TechStackSection title="Backend Development" stack={backStack} variant="backend" />
+                <TechStackSection title="Backend Development" stack={backStack} align="right" />
                 <TechStackSection title="Tools & Platforms" stack={toolStack} />
             </div>
-        </section >
+        </section>
     );
 }
