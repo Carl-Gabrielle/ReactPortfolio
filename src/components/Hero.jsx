@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { FaDownload, FaGithub } from "react-icons/fa6";
 import { FaInstagram, FaLinkedinIn, FaFacebook, FaLaptopCode } from "react-icons/fa";
-import ProfileImage from '../assets/images/profile.webp';
+import ProfileImage from '../assets/images/profile.jpg';
 import BlurText from "./BlurText";
 import { HiLocationMarker } from 'react-icons/hi';
 import { useEffect } from "react";
