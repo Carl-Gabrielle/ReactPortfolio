@@ -54,7 +54,7 @@ const CertificationCard = ({ title, date, organization }) => (
 const ExperienceCard = ({ role, company, date, description }) => (
     <div className="relative pl-6 border-l border-gray-200 experience-card">
         <div className="mb-8 ml-4">
-            <div className="absolute left-0 top-0 h-3 w-3 animate-pulse rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 border-2 border-white shadow-md transform -translate-x-1/2 z-10"></div>
+            <div className="absolute left-0 top-0 h-3 w-3  rounded-full bg-gradient-to-r from-blue-500 to-indigo-600 border-2 border-white shadow-md transform -translate-x-1/2 z-10"></div>
             <h3 className="text-md font-semibold text-gray-800 dark:text-slate-100">{role}</h3>
             <div className="text-xs text-gray-500 flex justify-between items-center flex-wrap">
                 <span className="text-sm font-medium text-indigo-600">{company}</span>
@@ -132,6 +132,13 @@ export default function Profile() {
                                 text="Professional Experience"
                             />
                             <div className="mt-6">
+                                <ExperienceCard
+                                    role="Software QA Tester"
+                                    company="InternalDevteamPh"
+                                    date="October 2025 – Present"
+                                    description="Performed manual QA testing (functional, UI, regression) across web features 
+                                    to ensure product quality and identify edge cases before release."
+                                />
                                 <ExperienceCard
                                     role="Full-Stack Web Developer"
                                     company="Freelance"
