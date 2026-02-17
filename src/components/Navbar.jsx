@@ -220,7 +220,7 @@ export default function Navbar() {
                   <FaRegCopyright /> {new Date().getFullYear()} Portfolio
                 </span>
               </div>
-            </ul>
+            </ul> 
           </div>
         </div>
       )}
