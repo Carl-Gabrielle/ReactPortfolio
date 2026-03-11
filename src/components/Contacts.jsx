@@ -19,7 +19,6 @@ const CtaCard = ({ icon, title, label }) => (
     </div>
   </div>
 );
-
 export default function Contacts() {
   useEffect(() => {
     contactAnimations();
