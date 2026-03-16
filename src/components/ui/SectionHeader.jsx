@@ -7,9 +7,9 @@ const headerRef = useRef(null);
 
 useEffect(() => {
   if (headerRef.current) {
-    fadeInUp(headerRef.current)
+    fadeInUp(headerRef.current);
   }
-}, []
+}, []);
   return (
     <h2
       ref={headerRef}
