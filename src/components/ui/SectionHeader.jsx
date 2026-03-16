@@ -3,14 +3,13 @@ import { useEffect, useRef } from "react";
 import { fadeInUp } from "../../animations/gsap";
 
 export const SectionHeader = ({ text }) => {
-  const headerRef = useRef(null);
+const headerRef = useRef(null);
 
-  useEffect(() => {
-    if (headerRef.current) {
-      fadeInUp(headerRef.current);
-    }
-  }, []);
-
+useEffect(() => {
+  if (headerRef.current) {
+    fadeInUp(headerRef.current)
+  }
+}, []
   return (
     <h2
       ref={headerRef}
